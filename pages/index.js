@@ -1,3 +1,11 @@
-const Homepage = () => {};
+import Navbar from '../components/Navbar/Navbar'
 
-export default Homepage;
+const Homepage = () => {
+  return (
+    <>
+      <Navbar />
+    </>
+  )
+}
+
+export default Homepage
