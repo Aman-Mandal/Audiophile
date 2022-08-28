@@ -8,8 +8,10 @@ module.exports = {
     extend: {
       colors: {
         'dark-orange': '#D27040',
+        'light-orange': '#D97E4A',
+        'very-light-orange': '#DF9768',
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')  ],
 }

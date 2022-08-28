@@ -1,7 +1,10 @@
 import React from 'react'
+import ProductCard from '../../components/Product-Card/Product-Card'
 
 const Headphones = () => {
-  return <div>Headphones</div>
+  return (
+   <></>
+  )
 }
 
 export default Headphones
