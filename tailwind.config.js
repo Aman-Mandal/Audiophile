@@ -11,7 +11,11 @@ module.exports = {
         'light-orange': '#D97E4A',
         'very-light-orange': '#DF9768',
       },
+      backgroundImage: {
+        'circle-pattern':
+          "url('../public/images/home/desktop/pattern-circles.svg')",
+      },
     },
   },
-  plugins: [require('tailwind-scrollbar-hide')  ],
+  plugins: [require('tailwind-scrollbar-hide')],
 }

@@ -4,6 +4,7 @@ import ProductCard from '../components/Product-Card/Product-Card'
 import headphoneImg from '../public/images/shared/headphones.png'
 import speakersImg from '../public/images/shared/speakers.png'
 import earphoneImg from '../public/images/shared/earphones.png'
+import SpeakerCard from '../components/ZX9-SpeakerCard/SpeakerCard'
 
 const products = [
   { id: 'p1', title: 'Headphones', src: headphoneImg },
@@ -13,7 +14,7 @@ const products = [
 
 const Homepage = () => {
   return (
-    <>
+    <div className="">
       <Navbar />
       <Header />
       <div className="flex gap-10 justify-center mb-48">
@@ -25,7 +26,8 @@ const Homepage = () => {
           />
         ))}
       </div>
-    </>
+      <SpeakerCard />
+    </div>
   )
 }
 
