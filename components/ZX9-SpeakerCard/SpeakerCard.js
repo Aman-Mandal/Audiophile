@@ -5,8 +5,8 @@ import speaker from '../../public/images/home/desktop/image-speaker-zx9.png'
 
 const SpeakerCard = () => {
   return (
-    <div className="rounded-lg w-4/5 border mx-auto bg-light-orange ">
-      <div className="bg-circle-pattern">
+    <div className="rounded-lg w-[85%] border mx-auto bg-light-orange ">
+      <div className="bg-circle-pattern bg-left-top bg-no-repeat">
         <div className="flex items-center gap-16">
           <div className="w-1/2 pt-24 px-20">
             <Image height={600} width={500} src={speaker} />
