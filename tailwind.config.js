@@ -14,6 +14,10 @@ module.exports = {
       backgroundImage: {
         'circle-pattern':
           "url('../public/images/home/desktop/pattern-circles.svg')",
+        'speaker-img':
+          "url('../public/images/home/desktop/image-speaker-zx7.jpg')",
+          'earphone-img':
+          "url('../public/images/home/desktop/image-earphones-yx1.jpg')"
       },
     },
   },

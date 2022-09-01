@@ -3,7 +3,7 @@ import React from 'react'
 import Button from '../Button/Button'
 import speaker from '../../public/images/home/desktop/image-speaker-zx9.png'
 
-const SpeakerCard = () => {
+const ZX9SpeakerCard = () => {
   return (
     <div className="rounded-lg w-[85%] border mx-auto bg-light-orange ">
       <div className="bg-circle-pattern bg-left-top bg-no-repeat">
@@ -19,7 +19,7 @@ const SpeakerCard = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Button hoverColor={'gray-100'} bgColor={'black'}>
+            <Button hoverColor='hover:bg-neutral-800' bgColor={'black'}>
               See Product
             </Button>
           </div>
@@ -29,4 +29,4 @@ const SpeakerCard = () => {
   )
 }
 
-export default SpeakerCard
+export default ZX9SpeakerCard

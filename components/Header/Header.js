@@ -17,7 +17,7 @@ const Header = () => {
             Experience natural, life-like audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button hoverColor={'very-light-orange'} bgColor={'light-orange'}>
+          <Button hoverColor='hover:bg-very-light-orange' bgColor={'light-orange'}>
             See Product
           </Button>
         </div>

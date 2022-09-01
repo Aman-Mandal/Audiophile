@@ -4,7 +4,9 @@ import ProductCard from '../components/Product-Card/Product-Card'
 import headphoneImg from '../public/images/shared/headphones.png'
 import speakersImg from '../public/images/shared/speakers.png'
 import earphoneImg from '../public/images/shared/earphones.png'
-import SpeakerCard from '../components/ZX9-SpeakerCard/SpeakerCard'
+import ZX9SpeakerCard from '../components/ZX9-SpeakerCard/ZX9-SpeakerCard'
+import ZX7SpeakerCard from '../components/ZX7-SpeakerCard/ZX7-SpeakerCard'
+import YX1EarphoneCard from '../components/YX1-EarphoneCard/YX1-EarphoneCard'
 
 const products = [
   { id: 'p1', title: 'Headphones', src: headphoneImg },
@@ -26,7 +28,9 @@ const Homepage = () => {
           />
         ))}
       </div>
-      <SpeakerCard />
+      <ZX9SpeakerCard />
+      <ZX7SpeakerCard />
+      <YX1EarphoneCard/>
     </div>
   )
 }
