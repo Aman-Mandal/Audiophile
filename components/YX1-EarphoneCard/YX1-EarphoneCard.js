@@ -11,7 +11,7 @@ const YX1EarphoneCard = () => {
         <div className="flex bg-neutral-200 w-1/2 rounded-lg">
           <div className="m-auto ">
             <h2 className="text-3xl font-semibold mb-6">YX1 Earphones</h2>
-            <Button bgColor={'black'} hoverColor="hover:bg-neutral-800">
+            <Button bgColor="black" hoverColor="hover:bg-neutral-800">
               See Product
             </Button>
           </div>
