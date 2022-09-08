@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import Button from '../Button/Button'
-import speaker from '../../public/images/home/desktop/image-speaker-zx9.png'
+import Button from '../../Button/Button'
+import speaker from '../../../public/images/home/desktop/image-speaker-zx9.png'
 
 const ZX9SpeakerCard = () => {
   return (
@@ -19,7 +19,7 @@ const ZX9SpeakerCard = () => {
               Upgrade to premium speakers that are phenomenally built to deliver
               truly remarkable sound.
             </p>
-            <Button hoverColor='hover:bg-neutral-800' bgColor={'black'}>
+            <Button hoverColor="hover:bg-neutral-800" bgColor={'black'}>
               See Product
             </Button>
           </div>

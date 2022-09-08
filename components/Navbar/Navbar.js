@@ -7,7 +7,7 @@ const Navbar = () => {
   const router = useRouter()
 
   return (
-    <div className="py-8 bg-black sticky top-0 z-10">
+    <div className="py-8 bg-black sticky top-0 z-10 ">
       <div className="flex items-center justify-around">
         <h2 className="text-3xl font-bold text-white">audiophile</h2>
         <ul className="flex space-x-10 text-sm text-white uppercase font-medium tracking-widest">

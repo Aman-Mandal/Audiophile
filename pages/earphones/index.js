@@ -1,9 +1,7 @@
-import React from 'react'
+import Header from '../../components/Reusable/Header/Header'
 
 const Earphones = () => {
-  return (
-    <div>Earphones</div>
-  )
+  return <Header name="Earphones" />
 }
 
 export default Earphones

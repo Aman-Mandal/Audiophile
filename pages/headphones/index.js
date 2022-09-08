@@ -1,9 +1,12 @@
-import React from 'react'
-import ProductCard from '../../components/Product-Card/Product-Card'
+import Header from '../../components/Reusable/Header/Header'
+import Product from '../../components/Reusable/Product/Product'
 
 const Headphones = () => {
   return (
-   <></>
+    <>
+      <Header name="Headphones" />
+      <Product />
+    </>
   )
 }
 

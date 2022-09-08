@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const ProductCard = ({ title, src }) => {
+const ProductCard = ({ title, src, link }) => {
   return (
     <div className=" flex relative flex-col items-center justify-end h-48 w-[350px] rounded-lg bg-neutral-200 shadow-lg mt-48 pb-8">
       <div className=" absolute -top-24">
@@ -12,7 +12,7 @@ const ProductCard = ({ title, src }) => {
         {title}
       </h2>
       <div className="uppercase font-semibold text-light-orange text-sm">
-        <Link href="/">Shop</Link>
+        <Link href={link}>Shop</Link>
       </div>
     </div>
   )

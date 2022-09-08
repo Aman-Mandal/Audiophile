@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -16,8 +17,8 @@ module.exports = {
           "url('../public/images/home/desktop/pattern-circles.svg')",
         'speaker-img':
           "url('../public/images/home/desktop/image-speaker-zx7.jpg')",
-          'earphone-img':
-          "url('../public/images/home/desktop/image-earphones-yx1.jpg')"
+        'earphone-img':
+          "url('../public/images/home/desktop/image-earphones-yx1.jpg')",
       },
     },
   },

@@ -1,5 +1,5 @@
-import Button from '../Button/Button'
-import heroImg from '../../public/images/home/desktop/headphone-hero-image.png'
+import Button from '../../Button/Button'
+import heroImg from '../../../public/images/home/desktop/headphone-hero-image.png'
 import Image from 'next/image'
 
 const Header = () => {
@@ -17,7 +17,10 @@ const Header = () => {
             Experience natural, life-like audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button hoverColor='hover:bg-very-light-orange' bgColor={'light-orange'}>
+          <Button
+            hoverColor="hover:bg-very-light-orange"
+            bgColor={'light-orange'}
+          >
             See Product
           </Button>
         </div>

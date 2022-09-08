@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import Button from '../Button/Button'
-import earphone from '../../public/images/home/desktop/image-earphones-yx1.jpg'
+import Button from '../../Button/Button'
+import earphone from '../../../public/images/home/desktop/image-earphones-yx1.jpg'
 
 const YX1EarphoneCard = () => {
   return (

@@ -1,7 +1,8 @@
 import React from 'react'
+import Header from '../../components/Reusable/Header/Header'
 
 const Speakers = () => {
-  return <div>Speakers</div>
+  return <Header name="Speakers" />
 }
 
 export default Speakers
