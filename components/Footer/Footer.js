@@ -1,24 +1,51 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { FaFacebookSquare, FaInstagram, FaTwitterSquare } from 'react-icons/fa'
 
 const Footer = () => {
+  const router = useRouter()
+
   return (
     <div className="bg-black py-20">
       <div className="w-[80%] mx-auto ">
         <div className="flex justify-between items-center">
           <h2 className="text-white text-3xl font-bold">audiophile</h2>
           <ul className="flex space-x-10 text-sm text-white uppercase font-medium tracking-widest">
-            <li className="hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200">
+            <li
+              className={`${
+                router.pathname == '/'
+                  ? 'text-dark-orange '
+                  : 'hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200'
+              } `}
+            >
               <Link href="/">Home</Link>
             </li>
-            <li className="hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200">
+            <li
+              className={`${
+                router.pathname == '/headphones'
+                  ? 'text-dark-orange '
+                  : 'hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200'
+              } `}
+            >
               <Link href="/headphones">Headphones</Link>
             </li>
-            <li className="hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200">
+            <li
+              className={`${
+                router.pathname == '/speakers'
+                  ? 'text-dark-orange '
+                  : 'hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200'
+              } `}
+            >
               <Link href="/speakers">Speakers</Link>
             </li>
-            <li className="hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200">
+            <li
+              className={`${
+                router.pathname == '/earphones'
+                  ? 'text-dark-orange '
+                  : 'hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200'
+              } `}
+            >
               <Link href="/earphones">Earphones</Link>
             </li>
           </ul>
