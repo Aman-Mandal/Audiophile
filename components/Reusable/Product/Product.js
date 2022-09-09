@@ -1,24 +1,24 @@
 import Image from 'next/image'
 import React from 'react'
 import Button from '../../Button/Button'
-import xx99headphone from '../../../public/images/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg'
 
-const Product = () => {
+const Product = ({ img, name, description }) => {
   return (
-    <div className="flex w-[80%] mx-auto my-28 gap-24">
-      <Image className="" src={xx99headphone} />
-      <div className="my-auto w-4/5">
+    <div className="flex w-[75%] mx-auto my-28 gap-20">
+      <div className="relative flex-[0.6]">
+        <Image src={img} width={700} height={750} />
+      </div>
+
+      <div className="my-auto flex-[0.4]  py-20">
         <div>
           <p className=" text-dark-orange tracking-[0.7em] text-sm mb-4 uppercase">
             New Product
           </p>
           <h2 className="tracking-wide text-4xl uppercase font-semibold mb-6 ">
-            XX99 Mark 11 <br /> Headphones
+            {name}
           </h2>
           <p className="font-thin text-[#745455] mb-8 text-justify">
-            The new XX99 Mark 11 Headphones is the pinnacle of pristine audio.
-            It redifines your premium headphone experience by reproducing the
-            balanced depth and precision of studio-quality sound.
+            {description}
           </p>
           <Button bgColor="light-orange" hoverColor="hover:bg-dark-orange">
             See Product
