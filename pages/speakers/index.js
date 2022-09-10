@@ -19,6 +19,7 @@ const Speakers = ({ speakers }) => {
       {speakers.map(speaker => (
         <Product
           key={speaker.id}
+          id={speaker.id}
           name={speaker.name}
           description={speaker.description}
           img={speaker.img}
