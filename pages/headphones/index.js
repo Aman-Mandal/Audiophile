@@ -22,6 +22,7 @@ const Headphones = ({ headphones }) => {
           name={headphone.name}
           img={headphone.img}
           description={headphone.description}
+          price={headphone.price}
         />
       ))}
     </>

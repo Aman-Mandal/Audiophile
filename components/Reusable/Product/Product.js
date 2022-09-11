@@ -1,13 +1,28 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../../Button/Button'
 
-const Product = ({ img, name, description, id }) => {
+const Product = ({ img, name, description, id, price, detail = false }) => {
   const router = useRouter()
+  const [counter, setCounter] = useState(1)
 
   const showDetailsHandler = () => {
     router.push(`/${id}`)
+  }
+
+  const increaseCounterHandler = () => {
+    setCounter(count => count + 1)
+  }
+
+  const decreaseCounterHandler = () => {
+    if (counter > 1) {
+      setCounter(count => count - 1)
+    }
+  }
+
+  const addToCartHandler = () => {
+    console.log('Added')
   }
 
   return (
@@ -24,16 +39,52 @@ const Product = ({ img, name, description, id }) => {
           <h2 className="tracking-wide text-4xl uppercase font-semibold mb-6 ">
             {name}
           </h2>
-          <p className="font-thin text-[#745455] mb-8 text-justify">
+          <p className="font-thin text-[#745455] mb-6 text-justify">
             {description}
           </p>
-          <Button
-            onClick={showDetailsHandler}
-            bgColor="light-orange"
-            hoverColor="hover:bg-dark-orange"
-          >
-            See Product
-          </Button>
+          {detail && (
+            <p className="font-semibold text-xl mb-6">
+              $ {price?.toLocaleString('en-US')}
+            </p>
+          )}
+
+          {detail && (
+            <div className="flex gap-6 mb-4">
+              <div className="w-fit bg-neutral-100 ">
+                <button
+                  onClick={increaseCounterHandler}
+                  className="bg-neutral-100 px-4 py-3 text-lg rounded-l-md hover:bg-neutral-200 hover:text-dark-orange"
+                >
+                  +
+                </button>
+                <span className="px-4">{counter}</span>
+                <button
+                  onClick={decreaseCounterHandler}
+                  className="bg-neutral-100 px-4 py-3 text-lg rounded-r-md hover:bg-neutral-200 hover:text-dark-orange"
+                >
+                  -
+                </button>
+              </div>
+
+              <Button
+                onClick={addToCartHandler}
+                bgColor="light-orange"
+                hoverColor="hover:bg-dark-orange"
+              >
+                Add to Cart
+              </Button>
+            </div>
+          )}
+
+          {!detail && (
+            <Button
+              onClick={showDetailsHandler}
+              bgColor="light-orange"
+              hoverColor="hover:bg-dark-orange"
+            >
+              See Product
+            </Button>
+          )}
         </div>
       </div>
     </div>
