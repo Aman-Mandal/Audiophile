@@ -14,8 +14,8 @@ export const fetchData = async product => {
       img: data[key].img,
       features: data[key].features,
       price: data[key].price,
-      moreImgs: data[key].moreImgs,
-      boxContent: data[key].boxContent,
+      // moreImgs: data[key].moreImgs,
+      // boxContent: data[key].boxContent,
     })
   }
 

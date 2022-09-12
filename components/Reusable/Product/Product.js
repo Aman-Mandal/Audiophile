@@ -2,7 +2,6 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import Button from '../../Button/Button'
-import testImg from '../../../public/images/product-xx59-headphones/product-zx9-speaker/desktop/image-product.jpg'
 
 const Product = ({
   img,
@@ -39,7 +38,7 @@ const Product = ({
   console.log(moreImgs)
 
   return (
-    <div className="w-[75%] mx-auto">
+    <div className="w-[82%] mx-auto">
       <section className="flex  my-28 gap-20">
         <div className="relative flex-[0.6]">
           <Image src={img} width={700} height={750} />
@@ -134,23 +133,27 @@ const Product = ({
           </section>
 
           <section>
-            {/* {moreImgs.map(singleImg => (
-              <div className="grid grid-cols-2">
-                <div className=''>
-                  <Image src={singleImg.img} />
-                </div>
-              </div> */}
-            {/* ))} */}
-
-            <div className="grid grid-cols-2">
-              <div>
-                <Image src={testImg} />
+            <div className="grid grid-cols-5 grid-rows-2 gap-6 h-screen ">
+              <div className="col-span-2 relative">
+                <Image
+                  layout="fill"
+                  src={moreImgs.img}
+                  className="rounded-md"
+                />
               </div>
-              <div>
-                <Image src={testImg} />
+              <div className="row-span-2 col-span-3 relative ">
+                <Image
+                  layout="fill"
+                  src={moreImgs.img}
+                  className="rounded-md"
+                />
               </div>
-              <div>
-                <Image src={testImg} />
+              <div className="col-span-2 relative">
+                <Image
+                  layout="fill"
+                  src={moreImgs.img}
+                  className="rounded-md"
+                />
               </div>
             </div>
           </section>
