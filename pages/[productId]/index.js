@@ -20,7 +20,7 @@ const ProductDetails = ({}) => {
           { quantity: 1, name: 'third' },
           { quantity: 2, name: 'fourth' },
         ]}
-        moreImgs={[{ img: testImg }, { img: testImg }, { img: testImg }]}
+        // moreImgs={{ img1: testImg, img2: testImg, img3: testImg }}
       />
     </>
   )

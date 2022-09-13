@@ -8,7 +8,7 @@ const Product = ({
   name,
   description,
   features,
-  moreImgs,
+  // moreImgs,
   boxContent,
   id,
   price,
@@ -34,8 +34,6 @@ const Product = ({
   const addToCartHandler = () => {
     console.log('Added')
   }
-
-  console.log(moreImgs)
 
   return (
     <div className="w-[82%] mx-auto">
@@ -134,27 +132,27 @@ const Product = ({
 
           <section>
             <div className="grid grid-cols-5 grid-rows-2 gap-6 h-screen ">
-              <div className="col-span-2 relative">
+              {/* <div className="col-span-2 relative">
                 <Image
                   layout="fill"
-                  src={moreImgs.img}
+                  src={moreImgs.img1}
                   className="rounded-md"
                 />
               </div>
               <div className="row-span-2 col-span-3 relative ">
                 <Image
                   layout="fill"
-                  src={moreImgs.img}
+                  src={moreImgs.img2}
                   className="rounded-md"
                 />
               </div>
               <div className="col-span-2 relative">
                 <Image
                   layout="fill"
-                  src={moreImgs.img}
+                  src={moreImgs.img3}
                   className="rounded-md"
                 />
-              </div>
+              </div> */}
             </div>
           </section>
         </>
