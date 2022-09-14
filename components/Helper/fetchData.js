@@ -1,6 +1,8 @@
-export const fetchData = async product => {
+export const fetchData = async (product, details = false) => {
   const response = await fetch(
-    `https://audiophile-aman-default-rtdb.firebaseio.com/products/${product}.json`
+    `https://audiophile-aman-default-rtdb.firebaseio.com/${
+      details ? product : `products/${product}`
+    }.json`
   )
   const data = await response.json()
 
@@ -14,8 +16,8 @@ export const fetchData = async product => {
       img: data[key].img,
       features: data[key].features,
       price: data[key].price,
-      // moreImgs: data[key].moreImgs,
-      // boxContent: data[key].boxContent,
+      moreImgs: data[key].moreImgs,
+      boxContent: data[key].boxContent,
     })
   }
 

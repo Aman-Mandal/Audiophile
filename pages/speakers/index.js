@@ -23,6 +23,7 @@ const Speakers = ({ speakers }) => {
           name={speaker.name}
           description={speaker.description}
           img={speaker.img}
+          price={speaker.price}
         />
       ))}
     </>
