@@ -38,7 +38,7 @@ const Product = ({
   console.log(moreImgs)
 
   return (
-    <div className="w-[80%] mx-auto">
+    <div className="w-[82%] mx-auto">
       <section className="flex  my-28 gap-20">
         <div className="relative flex-[0.6]">
           <Image src={img} width={700} height={750} />
@@ -133,23 +133,27 @@ const Product = ({
           </section>
 
           <section>
-            <div className="grid grid-cols-5 grid-rows-2 gap-8 h-screen mt-32 ">
-              <div className="col-span-2 relative">
+            <div className="grid grid-cols-8 grid-rows-4 gap-8 h-[88vh] mt-32 ">
+              <div className="col-span-3 row-span-2 relative">
                 <Image
                   layout="fill"
                   src={moreImgs[0].imgSrc}
                   className="rounded-md"
                 />
               </div>
-              <div className="row-span-2 col-span-3 relative ">
+              <div className="row-span-4 col-span-5 relative ">
                 <Image
                   layout="fill"
                   src={moreImgs[1].imgSrc}
                   className="rounded-md"
                 />
               </div>
-              <div className="col-span-2 relative">
-                <Image layout="fill" src={moreImgs[2].imgSrc} className="rounded-md" />
+              <div className=" row-span-2 col-span-3 relative">
+                <Image
+                  layout="fill"
+                  src={moreImgs[2].imgSrc}
+                  className="rounded-md"
+                />
               </div>
             </div>
           </section>
