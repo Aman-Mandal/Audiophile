@@ -11,7 +11,7 @@ const ProductCard = ({ title, src, link }) => {
       <h2 className="uppercase text-xl font-medium tracking-wide pb-4">
         {title}
       </h2>
-      <div className="uppercase font-semibold text-light-orange text-sm">
+      <div className="uppercase font-semibold text-light-orange text-sm hover:scale-110 transition-all ease-in-out duration-200">
         <Link href={link}>Shop</Link>
       </div>
     </div>

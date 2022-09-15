@@ -32,10 +32,8 @@ const Product = ({
   }
 
   const addToCartHandler = () => {
-    console.log('Added')
+    
   }
-
-  console.log(moreImgs)
 
   return (
     <div className="w-[82%] mx-auto">
@@ -119,7 +117,7 @@ const Product = ({
                   In the Box
                 </h2>
                 {boxContent?.map(content => (
-                  <div className="flex gap-5 py-1 ">
+                  <div key={content.id} className="flex gap-5 py-1 ">
                     <p className="px-2 text-dark-orange font-semibold">
                       {content.quantity}x
                     </p>

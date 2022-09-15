@@ -1,8 +1,15 @@
 import Button from '../../Button/Button'
 import heroImg from '../../../public/images/home/desktop/headphone-hero-image.png'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 const Header = () => {
+  const router = useRouter()
+
+  const seeProductHandler = () => {
+    router.push('/h1')
+  }
+
   return (
     <div className="flex justify-center px-20 bg-black h-full pt-6 ">
       <div className="basis-1/2">
@@ -11,13 +18,14 @@ const Header = () => {
             New Product
           </p>
           <h1 className="text-white text-6xl font-semibold pb-7">
-            XX99 Mark 11 <span>Headphones</span>
+            XX99 Mark II <span>Headphones</span>
           </h1>
           <p className="text-white text-md tracking-wider font-thin w-2/3 leading-6 mb-8">
             Experience natural, life-like audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
           <Button
+            onClick={seeProductHandler}
             hoverColor="hover:bg-very-light-orange"
             bgColor={'light-orange'}
           >
