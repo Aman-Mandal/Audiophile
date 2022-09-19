@@ -1,13 +1,23 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import Cart from '../Cart/Cart'
 
 const Navbar = () => {
+  const [showCart, setShowCart] = useState(false)
   const router = useRouter()
 
   const homeHandler = () => {
     router.push('/')
+  }
+
+  const showCartHandler = () => {
+    setShowCart(!showCart)
+  }
+
+  const hideCartHandler = () => {
+    setShowCart(false)
   }
 
   return (
@@ -57,9 +67,14 @@ const Navbar = () => {
             <Link href="/earphones">Earphones</Link>
           </li>
         </ul>
-        <div className="text-3xl text-white hover:cursor-pointer hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200">
+        <div
+          onClick={showCartHandler}
+          className="text-3xl text-white hover:cursor-pointer hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200"
+        >
           <AiOutlineShoppingCart />
         </div>
+
+        {showCart && <Cart onClose={hideCartHandler} />}
       </div>
     </div>
   )

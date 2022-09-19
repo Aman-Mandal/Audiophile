@@ -31,9 +31,7 @@ const Product = ({
     }
   }
 
-  const addToCartHandler = () => {
-    
-  }
+  const addToCartHandler = () => {}
 
   return (
     <div className="w-[82%] mx-auto">
@@ -134,6 +132,7 @@ const Product = ({
             <div className="grid grid-cols-8 grid-rows-4 gap-8 h-[88vh] mt-32 ">
               <div className="col-span-3 row-span-2 relative">
                 <Image
+                  // objectFit="contain"
                   layout="fill"
                   src={moreImgs[0].imgSrc}
                   className="rounded-md"
@@ -142,13 +141,15 @@ const Product = ({
               <div className="row-span-4 col-span-5 relative ">
                 <Image
                   layout="fill"
+                  // objectFit="contain"
                   src={moreImgs[1].imgSrc}
                   className="rounded-md"
                 />
               </div>
-              <div className=" row-span-2 col-span-3 relative">
+              <div className="row-span-2 col-span-3 relative">
                 <Image
                   layout="fill"
+                  // objectFit="contain"
                   src={moreImgs[2].imgSrc}
                   className="rounded-md"
                 />
