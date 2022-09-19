@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import Button from '../../Button/Button'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../../redux/cartSlice'
 
 const Product = ({
   img,
@@ -16,6 +18,7 @@ const Product = ({
 }) => {
   const router = useRouter()
   const [counter, setCounter] = useState(1)
+  const dispatch = useDispatch()
 
   const showDetailsHandler = () => {
     router.push(`/${id}`)
@@ -31,7 +34,16 @@ const Product = ({
     }
   }
 
-  const addToCartHandler = () => {}
+  const addToCartHandler = () => {
+    dispatch(
+      addToCart({
+        id,
+        name,
+        img,
+        price,
+      })
+    )
+  }
 
   return (
     <div className="w-[82%] mx-auto">

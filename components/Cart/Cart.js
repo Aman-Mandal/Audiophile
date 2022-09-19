@@ -1,5 +1,6 @@
 import Button from '../Button/Button'
 import CartItem from '../CartItem/CartItem'
+import { useSelector } from 'react-redux'
 
 const Backdrop = ({ onClose }) => {
   return (
@@ -11,12 +12,14 @@ const Backdrop = ({ onClose }) => {
 }
 
 const Cart = ({ children, onClose }) => {
+  const cart = useSelector(state => state.cart)
+
   return (
     <>
       <Backdrop onClose={onClose} />
       <div className="absolute  z-10 bg-white h-[70vh] top-24 right-32 w-[28%] rounded-lg px-10 py-8">
         <div className="flex flex-col justify-between h-full">
-          <div className="flex flex-col h-full ">
+          <div className="flex flex-col h-full overflow-y-auto scrollbar-hide">
             <div className="flex items-baseline justify-between mb-8">
               <p className="text-lg font-semibold">My Cart</p>
               <button
@@ -27,8 +30,14 @@ const Cart = ({ children, onClose }) => {
               </button>
             </div>
             <div>
-              <CartItem />
-              <CartItem />
+              {cart.map(item => (
+                <CartItem
+                  key={item.id}
+                  img={item.img}
+                  name={item.name.slice(0, 4)}
+                  price={item.price}
+                />
+              ))}
             </div>
           </div>
           <div className="text-center">
