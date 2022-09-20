@@ -14,8 +14,8 @@ const ZX9SpeakerCard = () => {
   return (
     <div className="rounded-lg w-[85%] border mx-auto bg-light-orange ">
       <div className="bg-circle-pattern bg-left-top bg-no-repeat">
-        <div className="flex items-center gap-16">
-          <div className="w-1/2 pt-24 px-20 ">
+        <div className="flex flex-col items-center gap-16 md:flex-row">
+          <div className="w-1/2 pt-24 px-20 md: ">
             <Image height={600} width={500} src={speaker} />
           </div>
           <div>

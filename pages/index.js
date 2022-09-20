@@ -17,7 +17,7 @@ const Homepage = () => {
   return (
     <div className="scrollbar">
       <Header />
-      <div className="flex gap-10 justify-center mb-48 ">
+      <div className="flex flex-col gap-0 w-full items-center mb-48 md:flex-row md:gap-10 md:justify-center">
         {products.map(product => (
           <ProductCard
             src={product.src}
