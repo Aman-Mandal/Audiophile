@@ -13,9 +13,9 @@ const YX1EarphoneCard = () => {
 
   return (
     <div className="w-full ">
-      <div className="flex w-[85%] mx-auto gap-12">
-        <Image className="rounded-lg flex-[1]" src={earphone} />
-        <div className="flex flex-[1] bg-neutral-200 w-1/2 rounded-lg">
+      <div className="flex flex-col w-[85%] mx-auto gap-5 md:flex-row md:gap-4">
+        <Image className="rounded-lg flex-[0.5]" src={earphone} />
+        <div className="flex bg-neutral-200 w-full py-20 rounded-lg md:w-1/2">
           <div className="m-auto ">
             <h2 className="text-3xl font-semibold mb-6">YX1 Earphones</h2>
             <Button

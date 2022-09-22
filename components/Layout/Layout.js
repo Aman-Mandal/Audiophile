@@ -5,12 +5,12 @@ import Navbar from '../Navbar/Navbar'
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="bg-white">
       <Navbar />
       <main>{children}</main>
       <ImageCard />
       <Footer />
-    </>
+    </div>
   )
 }
 
