@@ -1,6 +1,7 @@
 import Button from '../Button/Button'
 import CartItem from '../CartItem/CartItem'
 import { useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 
 const Backdrop = ({ onClose }) => {
   return (
@@ -13,6 +14,12 @@ const Backdrop = ({ onClose }) => {
 
 const Cart = ({ onClose }) => {
   const cartItems = useSelector(state => state.cart.items)
+  const router = useRouter()
+
+  const checkoutCartHandler = () => {
+    router.push('/checkout')
+    onClose()
+  }
 
   return (
     <>
@@ -49,7 +56,9 @@ const Cart = ({ onClose }) => {
               {/* <p>$ {totalPrice}</p> */}
             </div>
             <div className="text-center">
-              <Button bgColor="light-orange">Checkout</Button>
+              <Button onClick={checkoutCartHandler} bgColor="light-orange">
+                Checkout
+              </Button>
             </div>
           </div>
         </div>
