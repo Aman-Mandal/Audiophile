@@ -11,7 +11,7 @@ const Backdrop = ({ onClose }) => {
   )
 }
 
-const Cart = ({ children, onClose }) => {
+const Cart = ({ onClose }) => {
   const cartItems = useSelector(state => state.cart.items)
 
   return (
@@ -46,6 +46,7 @@ const Cart = ({ children, onClose }) => {
           <div>
             <div>
               <h2>Total</h2>
+              {/* <p>$ {totalPrice}</p> */}
             </div>
             <div className="text-center">
               <Button bgColor="light-orange">Checkout</Button>

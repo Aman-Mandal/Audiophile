@@ -13,7 +13,7 @@ const YX1EarphoneCard = () => {
 
   return (
     <div className="w-full ">
-      <div className="flex flex-col w-[85%] mx-auto gap-5 md:flex-row md:gap-4">
+      <div className="flex flex-col w-[85%] mx-auto gap-5 md:flex-row md:gap-8">
         <Image className="rounded-lg flex-[0.5]" src={earphone} />
         <div className="flex bg-neutral-200 w-full py-20 rounded-lg md:w-1/2">
           <div className="m-auto ">

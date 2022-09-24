@@ -47,7 +47,7 @@ const Product = ({
   }
 
   return (
-    <div className="w-[82%] mx-auto">
+    <div className="w-[85%] mx-auto">
       <section className="flex  my-28 gap-20">
         <div className="relative flex-[0.6]">
           <Image src={img} width={700} height={750} />
