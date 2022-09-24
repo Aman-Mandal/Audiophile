@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import Button from '../../Button/Button'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../../redux/cartSlice'
+import { addToCart, cartActions } from '../../../redux/cartSlice'
 
 const Product = ({
   img,
@@ -36,11 +36,12 @@ const Product = ({
 
   const addToCartHandler = () => {
     dispatch(
-      addToCart({
+      cartActions.addItemToCart({
         id,
-        name,
         img,
         price,
+        name,
+        description,
       })
     )
   }

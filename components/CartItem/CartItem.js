@@ -1,8 +1,25 @@
 import Image from 'next/image'
-import React, { useState } from 'react'
-import Counter from '../Counter/Counter'
+import { cartActions } from '../../redux/cartSlice'
+import { useDispatch } from 'react-redux'
 
-const CartItem = ({ img, name, price }) => {
+const CartItem = ({ id, img, name, price, quantity = 0 }) => {
+  const dispatch = useDispatch()
+
+  const removeItemHandler = () => {
+    dispatch(cartActions.removeItemFromCart(id))
+  }
+
+  const addItemHandler = () => {
+    dispatch(
+      cartActions.addItemToCart({
+        id,
+        img,
+        price,
+        name,
+      })
+    )
+  }
+
   return (
     <div className="flex items-center justify-between mb-2">
       <div className="flex items-center gap-2">
@@ -14,8 +31,20 @@ const CartItem = ({ img, name, price }) => {
           <p className="text-sm py-2 text-neutral-400">$ {price}</p>
         </div>
       </div>
-      <div className="">
-        <Counter />
+      <div className="flex">
+        <button
+          className="bg-neutral-100 px-3 py-2 text-sm rounded-l-md hover:bg-neutral-200 hover:text-dark-orange"
+          onClick={removeItemHandler}
+        >
+          -
+        </button>
+        <p className="px-3 my-auto bg-neutral-100 py-2 text-sm">{quantity}</p>
+        <button
+          className="bg-neutral-100 px-3 py-2 text-sm rounded-l-md hover:bg-neutral-200 hover:text-dark-orange"
+          onClick={addItemHandler}
+        >
+          +
+        </button>
       </div>
     </div>
   )

@@ -12,12 +12,12 @@ const Backdrop = ({ onClose }) => {
 }
 
 const Cart = ({ children, onClose }) => {
-  const cart = useSelector(state => state.cart)
+  const cartItems = useSelector(state => state.cart.items)
 
   return (
     <>
       <Backdrop onClose={onClose} />
-      <div className="absolute  z-10 bg-white h-[70vh] top-24 right-32 w-[28%] rounded-lg px-10 py-8">
+      <div className="absolute  z-10 bg-white h-[60vh] min-w-[22rem]   rounded-lg px-10 py-8 md:h-[70vh] md:w-[25vw] top-24 md:right-32">
         <div className="flex flex-col justify-between h-full">
           <div className="flex flex-col h-full overflow-y-auto scrollbar-hide">
             <div className="flex items-baseline justify-between mb-8">
@@ -30,18 +30,26 @@ const Cart = ({ children, onClose }) => {
               </button>
             </div>
             <div>
-              {cart.map(item => (
+              {cartItems.map(item => (
                 <CartItem
                   key={item.id}
+                  id={item.id}
                   img={item.img}
                   name={item.name.slice(0, 4)}
                   price={item.price}
+                  quantity={item.quantity}
+                  total={item.totalPrice}
                 />
               ))}
             </div>
           </div>
-          <div className="text-center">
-            <Button bgColor="dark-orange">Checkout</Button>
+          <div>
+            <div>
+              <h2>Total</h2>
+            </div>
+            <div className="text-center">
+              <Button bgColor="light-orange">Checkout</Button>
+            </div>
           </div>
         </div>
       </div>

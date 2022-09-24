@@ -1,46 +1,45 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  cart: [],
-  totalQuantity: 0,
-  totalAmount: 0,
-}
-
 const cartSlice = createSlice({
   name: 'cart',
-  initialState,
+  initialState: {
+    items: [],
+    totalQuantity: 0,
+    totalPrice: 0,
+  },
   reducers: {
-    addToCart(state, action) {
-      const itemInCart = state.cart.find(item => item.id === action.payload.id)
-
-      if (itemInCart) {
-        itemInCart.quantity++
+    addItemToCart(state, action) {
+      const newItem = action.payload
+      const existingItem = state.items.find(item => item.id === newItem.id)
+      state.totalQuantity++
+      if (!existingItem) {
+        state.items.push({
+          id: newItem.id,
+          price: newItem.price,
+          quantity: 1,
+          totalPrice: newItem.price,
+          name: newItem.name,
+        })
       } else {
-        state.cart.push({ ...action.payload, quantity: 1 })
+        existingItem.quantity++,
+          (existingItem.totalPrice = newItem.price + existingItem.totalPrice)
       }
     },
 
-    incrementQuantity(state, action) {
-      const item = state.cart.find(item => item.id === action.payload)
-      item.quantity++
-    },
-
-    decrementQuantity(state, action) {
-      const item = state.cart.find(item => item.id === action.payload)
-      if (item.quantity === 1) {
-        item.quantity = 1
+    removeItemFromCart(state, action) {
+      const id = action.payload
+      const existingItem = state.items.find(item => item.id === id)
+      state.totalQuantity--
+      if (existingItem.quantity === 1) {
+        state.items = state.items.filter(item => item.id !== id)
       } else {
-        item.quantity--
+        existingItem.quantity--
+        existingItem.totalPrice = existingItem.totalPrice - existingItem.price
       }
-    },
-
-    removeItem(state, action) {
-      const removeItem = state.cart.filter(item.id !== action.payload)
-      state.cart = removeItem
     },
   },
 })
 
-export const { addToCart, incrementQuantity, decrementQuantity, removeItem } =
-  cartSlice.actions
-export const cartReducer = cartSlice.reducer
+export const cartActions = cartSlice.actions
+
+export default cartSlice
