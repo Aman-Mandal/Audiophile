@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Audiophile
 
-## Getting Started
+An e-commerce store for audio products like headphones, speakers and earphones.
 
-First, run the development server:
+## Screenshots
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Here are some of the screenshots of this beautiful and modern audio store :)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Homepage
+![Screenshot 1](https://i.imgur.com/oDKGiqQ.png)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Products page
+![Screenshot3](https://i.imgur.com/Rn8WVjt.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Details Page
+![Screenshot](https://i.imgur.com/atv9F1b.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Technologies Used
 
-## Learn More
+- NextJS - used to create all the UI in this application and for server-side rendering
+- Tailwind CSS - for styling the components & UI
+- Firebase - used as a backend for storing all the products/products details and all the user information too when they checkout
 
-To learn more about Next.js, take a look at the following resources:
+## What did I learned?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- I learned how to create multi-page applications with NextJS
+- How and Why to use Server-side rendering
+- How nextJS helps with SEO
+- Optimizing Images and webpages, etc

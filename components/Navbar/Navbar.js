@@ -29,7 +29,7 @@ const Navbar = () => {
         >
           audiophile
         </h2>
-        <ul className="flex hidden  text-sm text-white uppercase font-medium tracking-widest">
+        <ul className="hidden md:inline-flex md:space-x-10  text-sm text-white uppercase font-medium tracking-widest">
           <li
             className={`${
               router.pathname == '/'

@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="w-[80%] mx-auto ">
         <div className="flex justify-between items-center">
           <h2 className="text-white text-3xl font-bold">audiophile</h2>
-          <ul className="flex hidden space-x-10 text-sm text-white uppercase font-medium tracking-widest">
+          <ul className="hidden md:inline-flex space-x-10 text-sm text-white uppercase font-medium tracking-widest">
             <li
               className={`${
                 router.pathname == '/'
