@@ -47,25 +47,42 @@ const Product = ({
   }
 
   return (
-    <div className="w-[85%] mx-auto">
-      <section className="flex  my-28 gap-20">
+    <div className="md:w-[85%] w-[90%] mx-auto">
+      <section className="flex md:flex-row flex-col my-12 md:my-28 md:gap-20">
         <div className="relative flex-[0.6]">
           <Image src={img} width={700} height={750} />
         </div>
 
         <div className="my-auto flex-[0.4]  py-20">
-          <div>
-            <p className=" text-dark-orange tracking-[0.7em] text-sm mb-4 uppercase">
-              New Product
-            </p>
-            <h2 className="tracking-wide text-4xl uppercase font-semibold mb-6 ">
-              {name}
-            </h2>
-            <p className="font-thin text-[#745455] mb-6 text-justify">
-              {description}
-            </p>
+          <div className="text-center md:text-left">
+            {detail ? (
+              <>
+                <p className=" text-dark-orange tracking-[0.7em] text-left text-sm mb-4 uppercase">
+                  New Product
+                </p>
+                <h2 className="tracking-wide text-3xl md:text-4xl text-left uppercase font-semibold mb-6 ">
+                  {name}
+                </h2>
+                <p className="font-thin text-[#745455] mb-6 md:px-0 text-left md:text-justify">
+                  {description}
+                </p>
+              </>
+            ) : (
+              <>
+                <p className=" text-dark-orange tracking-[0.7em] text-sm mb-4 uppercase">
+                  New Product
+                </p>
+                <h2 className="tracking-wide text-3xl md:text-4xl uppercase font-semibold mb-6 ">
+                  {name}
+                </h2>
+                <p className="font-thin text-[#745455] mb-6 px-4 md:px-0 md:text-justify">
+                  {description}
+                </p>
+              </>
+            )}
+
             {detail && (
-              <p className="font-semibold text-xl mb-6">
+              <p className="font-semibold text-left text-xl mb-6">
                 $ {price?.toLocaleString('en-US')}
               </p>
             )}
@@ -113,9 +130,9 @@ const Product = ({
 
       {detail && (
         <>
-          <section className="flex">
+          <section className="flex flex-col md:flex-row">
             <div className="flex-[0.5]">
-              <h2 className="font-semibold text-4xl uppercase mb-6">
+              <h2 className="font-semibold text-3xl md:text-4xl uppercase mb-6">
                 Features
               </h2>
               <p className="text-[#937674] font-thin text-justify">
@@ -123,8 +140,8 @@ const Product = ({
               </p>
             </div>
             <div className="flex-[0.5]">
-              <div className="h-full mx-auto w-fit">
-                <h2 className="font-semibold text-4xl uppercase mb-6">
+              <div className="h-full pt-10 md:pt-0 md:mx-auto w-fit">
+                <h2 className="font-semibold text-3xl md:text-4xl uppercase mb-6">
                   In the Box
                 </h2>
                 {boxContent?.map(content => (
@@ -142,8 +159,8 @@ const Product = ({
           </section>
 
           <section>
-            <div className="grid grid-cols-8 grid-rows-4 gap-8 h-[88vh] mt-32 ">
-              <div className="col-span-3 row-span-2 relative">
+            <div className="grid md:grid-cols-8 md:grid-rows-4 gap-4 md:gap-8 h-[88vh] mt-32 ">
+              <div className=" col-span-5 md:col-span-3 row-span-4 md:row-span-2 relative">
                 <Image
                   // objectFit="contain"
                   layout="fill"
@@ -159,7 +176,7 @@ const Product = ({
                   className="rounded-md"
                 />
               </div>
-              <div className="row-span-2 col-span-3 relative">
+              <div className="col-span-5 md:col-span-3 row-span-4 md:row-span-2 relative">
                 <Image
                   layout="fill"
                   // objectFit="contain"

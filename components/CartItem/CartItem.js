@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { cartActions } from '../../redux/cartSlice'
 import { useDispatch } from 'react-redux'
 
-const CartItem = ({ id, img, name, price, quantity = 0 }) => {
+const CartItem = ({ id, total, img, name, price, quantity = 0 }) => {
   const dispatch = useDispatch()
 
   const removeItemHandler = () => {
@@ -28,7 +28,7 @@ const CartItem = ({ id, img, name, price, quantity = 0 }) => {
         </div>
         <div>
           <p className="text-base uppercase font-bold">{name}</p>
-          <p className="text-sm py-2 text-neutral-400">$ {price}</p>
+          <p className="text-sm py-2 text-neutral-400">$ {total}</p>
         </div>
       </div>
       <div className="flex">

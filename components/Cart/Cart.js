@@ -14,6 +14,7 @@ const Backdrop = ({ onClose }) => {
 
 const Cart = ({ onClose }) => {
   const cartItems = useSelector(state => state.cart.items)
+  const totalPrice = useSelector(state => state.cart.totalPrice)
   const router = useRouter()
 
   const checkoutCartHandler = () => {
@@ -53,7 +54,7 @@ const Cart = ({ onClose }) => {
           <div>
             <div>
               <h2>Total</h2>
-              {/* <p>$ {totalPrice}</p> */}
+              <p>$ {totalPrice}</p>
             </div>
             <div className="text-center">
               <Button onClick={checkoutCartHandler} bgColor="light-orange">
