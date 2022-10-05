@@ -47,6 +47,7 @@ const Cart = ({ onClose }) => {
                   price={item.price}
                   quantity={item.quantity}
                   total={item.totalPrice}
+                  cart={true}
                 />
               ))}
             </div>

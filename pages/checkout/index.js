@@ -1,6 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import CartItem from '../../components/CartItem/CartItem'
 
 const Checkout = () => {
+  const cartItems = useSelector(state => state.cart.items)
+  console.log(cartItems)
+
   return (
     <div className="h-full w-screen bg-neutral-200 py-10">
       <form className="bg-white w-[90%] mx-auto py-10 px-6 rounded-lg h-full">
@@ -113,6 +118,52 @@ const Checkout = () => {
           </div>
         </div>
       </form>
+
+      <section className="bg-white w-[90%] mx-auto my-6 py-10 px-6 rounded-lg h-[30rem] flex flex-col justify-between">
+        <div>
+          <p className="text-xl uppercase font-semibold mb-6 ">Summary</p>
+          <div>
+            {cartItems.map(item => (
+              <CartItem
+                key={item.id}
+                id={item.id}
+                img={item.img}
+                name={item.name.slice(0, 4)}
+                price={item.price}
+                quantity={item.quantity}
+                total={item.totalPrice}
+                cart={false}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="uppercase text-sm space-y-2">
+          <div className="flex justify-between">
+            <p className="text-[#A17A7A] font-semibold tracking-wider">Total</p>
+            <p>$100</p>
+          </div>
+          <div className="flex justify-between">
+            <p className="text-[#A17A7A] font-semibold tracking-wider">
+              Shipping
+            </p>
+            <p>$10</p>
+          </div>
+          <div className="flex justify-between">
+            <p className="text-[#A17A7A] font-semibold tracking-wider">
+              VAT (included)
+            </p>
+            <p>$2</p>
+          </div>
+          <div className="flex justify-between py-3">
+            <p className="text-[#A17A7A] font-semibold tracking-wider">
+              Grand Total
+            </p>
+            <p className="text-light-orange font-semibold tracking-wider">
+              $120
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

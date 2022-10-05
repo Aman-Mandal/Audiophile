@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import Button from '../../Button/Button'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, cartActions } from '../../../redux/cartSlice'
 
 const Product = ({
@@ -17,21 +17,10 @@ const Product = ({
   detail = false,
 }) => {
   const router = useRouter()
-  const [counter, setCounter] = useState(1)
   const dispatch = useDispatch()
 
   const showDetailsHandler = () => {
     router.push(`/${id}`)
-  }
-
-  const increaseCounterHandler = () => {
-    setCounter(count => count + 1)
-  }
-
-  const decreaseCounterHandler = () => {
-    if (counter > 1) {
-      setCounter(count => count - 1)
-    }
   }
 
   const addToCartHandler = () => {
@@ -89,22 +78,6 @@ const Product = ({
 
             {detail && (
               <div className="flex gap-6 mb-4">
-                <div className="w-fit bg-neutral-100 ">
-                  <button
-                    onClick={increaseCounterHandler}
-                    className="bg-neutral-100 px-4 py-3 text-lg rounded-l-md hover:bg-neutral-200 hover:text-dark-orange"
-                  >
-                    +
-                  </button>
-                  <span className="px-4">{counter}</span>
-                  <button
-                    onClick={decreaseCounterHandler}
-                    className="bg-neutral-100 px-4 py-3 text-lg rounded-r-md hover:bg-neutral-200 hover:text-dark-orange"
-                  >
-                    -
-                  </button>
-                </div>
-
                 <Button
                   onClick={addToCartHandler}
                   bgColor="light-orange"
