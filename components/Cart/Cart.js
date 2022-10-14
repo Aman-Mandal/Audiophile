@@ -2,6 +2,8 @@ import Button from '../Button/Button'
 import CartItem from '../CartItem/CartItem'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
+import emptyCart from '../../assets/empty-cart.png'
+import Image from 'next/image'
 
 const Backdrop = ({ onClose }) => {
   return (
@@ -52,9 +54,13 @@ const Cart = ({ onClose }) => {
               ))}
             </div>
           </div>
+          {cartItems.length === 0 && <Image height={1200} width={400} src={emptyCart} />}
+
           <div>
-            <div>
-              <h2>Total</h2>
+            <div className="flex justify-between py-3">
+              <h2 className="tracking-wider text-gray-600 uppercase font-semibold">
+                Total
+              </h2>
               <p>$ {totalPrice}</p>
             </div>
             <div className="text-center">
