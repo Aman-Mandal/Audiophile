@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import CartItem from '../../components/CartItem/CartItem'
 import useInput from '../../hooks/useInput'
 import cod from '../../public/images/shared/payondelivery.png'
+import { useState } from 'react'
+import OrderModal from '../../components/OrderModal/OrderModal'
 
 const Checkout = () => {
   const cartItems = useSelector(state => state.cart.items)
@@ -10,7 +12,7 @@ const Checkout = () => {
   const shippingPrice = Math.floor(totalPrice / 100)
   const vatPrice = Math.round(totalPrice / 1000)
   const grandTotal = shippingPrice + vatPrice + totalPrice
-  console.log(cartItems)
+  const [showModal, setShowModal] = useState(false)
 
   const {
     value: enteredName,
@@ -101,7 +103,7 @@ const Checkout = () => {
       !enteredZipCodeIsValid ||
       !enteredPhoneNumberIsValid
     ) {
-      return
+      return alert('Fill the whole form!! ')
     }
     resetNameInput()
     resetAddressInput()
@@ -110,9 +112,9 @@ const Checkout = () => {
     resetemailInput()
     resetphoneNumberInput()
     resetZipCodeInput()
-  }
 
-  const customError = `border border-red-600 bg-[#fddddd] focus:border-red-700 focus:bg-[#fbe8d2]`
+    setShowModal(true)
+  }
 
   return (
     <div className="flex flex-col md:flex-row gap-5 h-full w-screen bg-neutral-200 md:py-36 md:px-32 py-10">
@@ -304,6 +306,16 @@ const Checkout = () => {
             Continue & Pay
           </button>
         </div>
+        {showModal && (
+          <OrderModal
+          // fullName={enteredName}
+          // grandTotalPrice={grandTotal}
+          // img={cartItems[0]?.img}
+          // productQuantity={cartItems[0]?.quantity}
+          // productName={cartItems[0]?.name}
+          // totalPrice={cartItems[0]?.totalPrice}
+          />
+        )}
       </section>
     </div>
   )
