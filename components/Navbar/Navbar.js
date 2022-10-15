@@ -2,11 +2,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { useSelector } from 'react-redux'
 import Cart from '../Cart/Cart'
 
 const Navbar = () => {
   const [showCart, setShowCart] = useState(false)
   const router = useRouter()
+  const totalQuantity = useSelector(state => state.cart.totalQuantity)
 
   const homeHandler = () => {
     router.push('/')
@@ -69,9 +71,14 @@ const Navbar = () => {
         </ul>
         <div
           onClick={showCartHandler}
-          className="text-3xl text-white hover:cursor-pointer hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200"
+          className="text-3xl relative text-white hover:cursor-pointer hover:text-dark-orange hover:scale-110 transition ease-in-out duration-200"
         >
           <AiOutlineShoppingCart />
+          {totalQuantity > 0 && (
+            <div className="h-5 w-5 rounded-full absolute -top-1 -right-2 bg-light-orange">
+              <p className="text-sm text-center ">{totalQuantity}</p>
+            </div>
+          )}
         </div>
 
         {showCart && <Cart onClose={hideCartHandler} />}

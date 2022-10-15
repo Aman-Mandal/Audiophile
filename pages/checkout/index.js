@@ -1,6 +1,8 @@
+import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import CartItem from '../../components/CartItem/CartItem'
 import useInput from '../../hooks/useInput'
+import cod from '../../public/images/shared/payondelivery.png'
 
 const Checkout = () => {
   const cartItems = useSelector(state => state.cart.items)
@@ -75,18 +77,42 @@ const Checkout = () => {
 
   let formIsValid = false
 
-  if (enteredNameIsValid && enteredEmailIsValid) {
+  if (
+    enteredNameIsValid &&
+    enteredEmailIsValid &&
+    enteredAddressIsValid &&
+    enteredCityIsValid &&
+    enteredCountryIsValid &&
+    enteredZipCodeIsValid &&
+    enteredPhoneNumberIsValid
+  ) {
     formIsValid = true
   }
 
   const submitFormHandler = event => {
     event.preventDefault()
 
-    if (!enteredNameIsValid || !enteredEmailIsValid) {
+    if (
+      !enteredNameIsValid ||
+      !enteredEmailIsValid ||
+      !enteredAddressIsValid ||
+      !enteredCityIsValid ||
+      !enteredCountryIsValid ||
+      !enteredZipCodeIsValid ||
+      !enteredPhoneNumberIsValid
+    ) {
       return
     }
     resetNameInput()
+    resetAddressInput()
+    resetCityInput()
+    resetCountryInput()
+    resetemailInput()
+    resetphoneNumberInput()
+    resetZipCodeInput()
   }
+
+  const customError = `border border-red-600 bg-[#fddddd] focus:border-red-700 focus:bg-[#fbe8d2]`
 
   return (
     <div className="flex flex-col md:flex-row gap-5 h-full w-screen bg-neutral-200 md:py-36 md:px-32 py-10">
@@ -104,8 +130,11 @@ const Checkout = () => {
               <label className="text-[11px] font-medium mb-2" htmlFor="name">
                 Name
               </label>
+              {nameInputHasError && (
+                <p className="text-red-600">Enter your name.</p>
+              )}
               <input
-                className="border-2 text-sm  border-gray-300 px-6 py-4 rounded-lg mb-6 hover:border-light-orange focus:border-none focus:outline-light-orange"
+                className=" border-2 text-sm  border-gray-300 px-6 py-4 rounded-lg mb-6 hover:border-light-orange focus:border-none focus:outline-light-orange"
                 id="name"
                 type="text"
                 placeholder="John Doe"
@@ -113,7 +142,6 @@ const Checkout = () => {
                 onBlur={nameBlurHandler}
                 value={enteredName}
               />
-              {nameInputHasError && <p className="">Name can't be empty.</p>}
             </div>
             <div className="flex flex-col md:w-1/2">
               <label className="text-[11px] font-medium mb-2" htmlFor="email">
@@ -209,30 +237,17 @@ const Checkout = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-dark-orange text-xs uppercase font-semibold tracking-widest mb-4">
+          <h2 className="text-dark-orange text-xs uppercase font-semibold tracking-widest my-8">
             Payment Method
           </h2>
-          <div className="flex border items-center px-6 pt-4 rounded-lg mb-4 md:w-1/2">
-            <input
-              className="border text-sm -2mr-2 my-2 border-gray-300 px-6 py-4 rounded-lg mb-6 hover:border-light-orange focus:border-none focus:outline-light-orange"
-              id="e-money"
-              type="radio"
-              name="payment"
-            />
-            <label className="text-[11px] font-medium mb-2" htmlFor="e-money">
-              E-Money
-            </label>
-          </div>
-          <div className="flex border items-center px-6 pt-4 rounded-lg md:w-1/2">
-            <input
-              className="border mr-2 tex-2t-sm my-2 border-gray-300 px-6 py-4 rounded-lg mb-6"
-              id="cod"
-              type="radio"
-              name="payment"
-            />
-            <label className="text-[11px] font-medium mb-2" htmlFor="cod">
-              Cash On Delivery
-            </label>
+
+          <div className="flex justify-evenly">
+            <Image className="flex-[0.2]" height={70} width={90} src={cod} />
+            <p className="flex-[0.8] font-sans text-gray-500 tracking-wider">
+              The ‘Cash on Delivery’ option enables you to pay in cash when our
+              delivery courier arrives at your residence. Just make sure your
+              address is correct so that your order will not be cancelled.
+            </p>
           </div>
         </div>
       </form>
@@ -241,7 +256,7 @@ const Checkout = () => {
       <section className="md:flex-[0.3] md:sticky md:top-[8rem] bg-white w-[90%] mx-auto  py-10 px-6 rounded-lg h-[30rem] flex flex-col justify-between">
         <div>
           <p className="text-xl uppercase font-semibold mb-6 ">Summary</p>
-          <div className='overflow-y-scroll'>
+          <div className="overflow-y-scroll">
             {cartItems.map(item => (
               <CartItem
                 key={item.id}

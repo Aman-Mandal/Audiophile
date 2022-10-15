@@ -36,8 +36,8 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="mb-12 w-72 md:mb-0 md:w-1/2 mx-auto">
-          <Image src={heroImg} alt="Headphones" />
+        <div className="mb-12 w-72 md:mb-0 md:w-[50%] mx-auto">
+          <Image src={heroImg}  alt="Headphones" />
         </div>
       </div>
     </div>

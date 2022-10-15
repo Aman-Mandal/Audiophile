@@ -20,8 +20,12 @@ const Cart = ({ onClose }) => {
   const router = useRouter()
 
   const checkoutCartHandler = () => {
-    router.push('/checkout')
-    onClose()
+    if (cartItems.length === 0) {
+      alert('Cart is Empty')
+    } else {
+      router.push('/checkout')
+      onClose()
+    }
   }
 
   return (
@@ -54,7 +58,9 @@ const Cart = ({ onClose }) => {
               ))}
             </div>
           </div>
-          {cartItems.length === 0 && <Image height={1200} width={400} src={emptyCart} />}
+          {cartItems.length === 0 && (
+            <Image height={1200} width={400} src={emptyCart} />
+          )}
 
           <div>
             <div className="flex justify-between py-3">
@@ -64,9 +70,16 @@ const Cart = ({ onClose }) => {
               <p>$ {totalPrice}</p>
             </div>
             <div className="text-center">
-              <Button onClick={checkoutCartHandler} bgColor="light-orange">
+              {/* <Button onClick={checkoutCartHandler} bgColor="light-orange">
                 Checkout
-              </Button>
+              </Button> */}
+
+              <button
+                onClick={checkoutCartHandler}
+                className="bg-light-orange py-3 w-full rounded-lg text-white uppercase tracking-wider font-semibold"
+              >
+                Checkout
+              </button>
             </div>
           </div>
         </div>
