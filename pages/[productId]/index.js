@@ -12,7 +12,7 @@ export const getStaticProps = async context => {
   )
 
   const data = await response.json()
-  
+
   console.log(data)
 
   return {
@@ -66,6 +66,7 @@ const ProductDetails = ({ data }) => {
   return (
     <>
       <Product
+        key={data.id}
         id={data.id}
         img={data.img}
         detail={true}
@@ -76,7 +77,7 @@ const ProductDetails = ({ data }) => {
         boxContent={data.boxContent}
         moreImgs={data.moreImgs}
       />
-    </> 
+    </>
   )
 }
 

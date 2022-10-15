@@ -55,10 +55,10 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row my-10">
           <p className="flex-[0.5] tracking-wider text-center md:text-justify text-white font-thin">
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most of personal audio. Come and visit our
-            demo facility - we're open 7 days a week.
+            Audiophile is an all in one stop to fulfill your audio needs.
+            We&apos;re a small team of music lovers and sound specialists who
+            are devoted to helping you get the most of personal audio. Come and
+            visit our demo facility - we&apos;re open 7 days a week.
           </p>
           <div className="flex-[0.5] ">
             <div className=" text-white text-2xl flex justify-center py-10 md:py-0 md:justify-end space-x-8">
