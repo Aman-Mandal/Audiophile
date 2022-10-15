@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import CartItem from '../../components/CartItem/CartItem'
 import useInput from '../../hooks/useInput'
 import cod from '../../public/images/shared/payondelivery.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import OrderModal from '../../components/OrderModal/OrderModal'
 
 const Checkout = () => {
@@ -22,6 +22,8 @@ const Checkout = () => {
     inputBlurHandler: nameBlurHandler,
     reset: resetNameInput,
   } = useInput(value => value.trim !== '')
+  
+
 
   const {
     value: enteredEmail,
@@ -114,6 +116,7 @@ const Checkout = () => {
     resetZipCodeInput()
 
     setShowModal(true)
+    console.log(name)
   }
 
   return (
@@ -308,12 +311,12 @@ const Checkout = () => {
         </div>
         {showModal && (
           <OrderModal
-          // fullName={enteredName}
-          // grandTotalPrice={grandTotal}
-          // img={cartItems[0]?.img}
-          // productQuantity={cartItems[0]?.quantity}
-          // productName={cartItems[0]?.name}
-          // totalPrice={cartItems[0]?.totalPrice}
+            fullName={enteredName}
+            grandTotalPrice={grandTotal}
+            img={cartItems[0]?.img}
+            productQuantity={cartItems[0]?.quantity}
+            productName={cartItems[0]?.name}
+            totalPrice={cartItems[0]?.totalPrice}
           />
         )}
       </section>
